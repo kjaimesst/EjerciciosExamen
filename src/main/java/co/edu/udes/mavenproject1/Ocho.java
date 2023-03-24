@@ -12,15 +12,15 @@ import java.util.Scanner;
  */
 public class Ocho {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         int [][] matrix = new int [5][12];
         String [] nameSignature = new String [5];
         String [] months = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", 
             "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
-        int [] sumSignatures = new int [5];
+        int [] additionSignatures = new int [5];
         int [] sumMonths = new int [12];
-        int mostStudiedSignature;
+        int mostSignatureStudied;
         int leastStudiedSignature;
         int iMax, iMin;
         
@@ -28,15 +28,15 @@ public class Ocho {
         
         for(int i=0;i<5;i++){
             System.out.println("Introduce el nombre de la materia: "+(i+1)+": ");
-            nameSignature[i] = input.nextLine();
+            nameSignature[i] = sc.nextLine();
         }
         
         for(int i=0;i<5;i++){
-            sumSignatures[i] = 0;
+            additionSignatures[i] = 0;
             for(int j=0;j<12;j++){
                 System.out.println("Introduce las horas estudiadas de la materia "+nameSignature[i]+" en "+months[j]+": ");
-                matrix[i][j] = input.nextInt();
-                sumSignatures[i] += matrix[i][j];
+                matrix[i][j] = sc.nextInt();
+                additionSignatures[i] += matrix[i][j];
             }
         }
         for(int j=0;j<12;j++){
@@ -46,33 +46,33 @@ public class Ocho {
             }
         }
         
-        mostStudiedSignature = sumSignatures[0];
+        mostSignatureStudied = additionSignatures[0];
         iMax = 0;
         for(int i=1;i<5;i++){
-            if(sumSignatures[i]>mostStudiedSignature){
-                mostStudiedSignature = sumSignatures[i];
+            if(additionSignatures[i]>mostSignatureStudied){
+                mostSignatureStudied = additionSignatures[i];
                 iMax = i;
             }
         }
         
-        leastStudiedSignature = sumSignatures[0];
+        leastStudiedSignature = additionSignatures[0];
         iMin = 0;
         for(int i=1;i<5;i++){
-            if(sumSignatures[i]<leastStudiedSignature){
-                leastStudiedSignature = sumSignatures[i];
+            if(additionSignatures[i]<leastStudiedSignature){
+                leastStudiedSignature = additionSignatures[i];
                 iMin = i;
             }
         }
         
         System.out.println("El total de horas anual de cada asignatura: ");
         for(int i=0;i<5;i++){
-            System.out.println(nameSignature[i]+": "+sumSignatures[i]);
+            System.out.println(nameSignature[i]+": "+additionSignatures[i]);
         }
         System.out.println("Este es el total de horas mensual estudiadas: ");
         for(int i=0;i<12;i++){
             System.out.println(months[i]+": "+sumMonths[i]);
         }
-        System.out.println("La materia con mas horas de estudio fue: "+nameSignature[iMax]+", con un total de "+mostStudiedSignature+" horas");
+        System.out.println("La materia con mas horas de estudio fue: "+nameSignature[iMax]+", con un total de "+mostSignatureStudied+" horas");
         System.out.println("La materia con menos horas de estudio fue: "+nameSignature[iMin]+", con un total de "+leastStudiedSignature+" horas");
         
     }

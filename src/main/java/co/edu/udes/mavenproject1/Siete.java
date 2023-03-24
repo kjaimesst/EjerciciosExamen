@@ -12,26 +12,26 @@ import java.util.Arrays;
  */
 public class Siete {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         System.out.println("Introduce el tamaño del vector 1");
-        int sizeOne = input.nextInt();
+        int sizeOne = sc.nextInt();
         int [] arrayOne = new int[sizeOne];
         
         System.out.println("Introduce el tamaño del vector 2");
-        int sizeTwo = input.nextInt();
+        int sizeTwo = sc.nextInt();
         int [] arrayTwo = new int[sizeTwo];
         
         System.out.println("Introduce los valores del vector 1");
         for(int i=0;i<sizeOne;i++){
             System.out.println("Introduce un numero entero");
-            arrayOne[i] = input.nextInt();
+            arrayOne[i] = sc.nextInt();
         }
         
         System.out.println("Introduce los valores del vector 2");
         for(int i=0;i<sizeTwo;i++){
             System.out.println("Introduce un numero entero");
-            arrayTwo[i] = input.nextInt();
+            arrayTwo[i] = sc.nextInt();
         }
         int [] arrayPlus = new int [sizeOne+sizeTwo];
         for(int i=0;i<(sizeOne+sizeTwo);i++){

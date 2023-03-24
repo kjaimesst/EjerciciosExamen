@@ -12,10 +12,10 @@ import java.util.Scanner;
  */
 public class Cuatro {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         System.out.println("Introduce cuantos numeros deseas ver en esta sucesion: ");
-        int num = input.nextInt();
+        int num = sc.nextInt();
         
         int fibonacci1 = 1;
         int fibonacci2 = 1;

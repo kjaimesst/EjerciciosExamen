@@ -15,13 +15,13 @@ public class Seis {
         Scanner input = new Scanner(System.in);
         
         System.out.println("Introduce una frase:");
-        String phrase = input.nextLine();
+        String word = input.nextLine();
         
         int words = 0;
         int letters = 0;
         
-        for(int i = 0;i<phrase.length();i++){
-            if(phrase.charAt(i)==32){
+        for(int i = 0;i<word.length();i++){
+            if(word.charAt(i)==32){
                 words++;
             }
         }
@@ -29,14 +29,13 @@ public class Seis {
         
         System.out.println("La frase tiene "+words+" palabras. Numero de palabras: ");
         
-        for(int i = 0;i<phrase.length();i++){
-            if(phrase.charAt(i)==32){
+        for(int i = 0;i<word.length();i++){
+            if(word.charAt(i)==32){
                 System.out.print(letters+" ");
                 letters=0;
                 continue;
             }
             letters++;            
         }
-        System.out.print(letters);
     }
 }

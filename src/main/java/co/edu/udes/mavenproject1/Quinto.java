@@ -12,15 +12,15 @@ import java.util.Scanner;
  */
 public class Quinto {
      public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         String way;
         
-        System.out.println("Introduce la base del triangulo rectangulo");
-        int base = input.nextInt();
+        System.out.println("Introduce un numero entero");
+        int base = sc.nextInt();
         
-        System.out.println("Introduce en que direccion debe ir el rectangulo? (Escribe 1  para ascendente y 2 para descendente)");
+        System.out.println("Introduce en que direccion debe ir el rectangulo? (1, para izquierda)(2, para derecha)");
         do{
-            way = input.next();
+            way = sc.next();
             way = way.toUpperCase();
             if(!way.equals("1")&&!way.equals("2")){
                 System.out.println("INVALIDO, introduce de nuevo");

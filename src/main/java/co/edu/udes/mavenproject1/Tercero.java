@@ -12,37 +12,37 @@ import java.util.Scanner;
  */
 public class Tercero {
      public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Introduce el numero de latas que deseas apilar: ");
-        int can = input.nextInt();
-        int sum = 3;
-        int lastSum = 1;
+        int cant = sc.nextInt();
+        int addition = 3;
+        int lastAddition = 1;
         int i = 2;
-        int numOfCans;
+        int numCans;
         
-        if(can==1||can==3){
-            System.out.println("Si se puede apilar "+can+" latas");
+        if(cant==1||cant==3){
+            System.out.println("Si se puede apilar "+cant+" latas");
             System.exit(0);
         }
-        if(can==2){
-            System.out.println("No se puede apilar "+can+" latas, necesitas por lo menos "+(can+1)+" latas");
+        if(cant==2){
+            System.out.println("No se puede apilar "+cant+" latas, necesitas por lo menos "+(cant+1)+" latas");
             System.exit(0);
         }
         
-        while(sum<can){
+        while(addition<cant){
             i++;
-            lastSum=sum;
-            sum+=i;
+            lastAddition=addition;
+            addition+=i;
         }
         
-        if(can==sum){
-            System.out.println("Si se puede apilar "+can+" latas");
-        }else if(can%lastSum <= sum%can){
-            numOfCans = lastSum;
-            System.out.println("No se puede apilar "+can+" latas, con "+numOfCans+" latas puedes armar una piramide");
+        if(cant==addition){
+            System.out.println("Si se puede apilar "+cant+" latas");
+        }else if(cant%lastAddition <= addition%cant){
+            numCans = lastAddition;
+            System.out.println("No se puede apilar "+cant+" latas, con "+numCans+" latas puedes armar una piramide");
         }else{
-            numOfCans = sum;
-            System.out.println("No se puede apilar "+can+" latas, necesitas por lo menos "+numOfCans+" latas");
+            numCans = addition;
+            System.out.println("No se puede apilar "+cant+" latas, necesitas por lo menos "+numCans+" latas");
         }
     }
 }
